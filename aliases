@@ -6,12 +6,18 @@ alias l='ls -l'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias vimrc='vim ~/.config/nvim/init.vim'
+alias vimrc="vim $HOME/.nvimrc"
 
 # Development stuff
 alias be='docker-compose up backend_au'
-alias adfs='myob-auth login --username=tim.roper@myob.com --sync --artifactory-user=titan_ci'
 
 # Applications and programs
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias vim="nvim"
+
+# Specific to work laptop
+if [ `hostname` == "C02V12Q4HTD8" ]
+  then
+    alias adfs='myob-auth login --username=tim.roper@myob.com --sync --artifactory-user=titan_ci'
+    alias adfs-kube-preprod='myob-auth k -e jupiter-preprod'
+fi
