@@ -12,6 +12,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()							" Initialize plugin system
 
 " Formatting
@@ -44,3 +46,8 @@ let g:airline_theme = 'base16'
 let g:CommandTWildIgnore='*/node_modules'			" Command-T Ignore from search
 let g:GitGutterEnable = 1					" Enable GitGutter
 
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsExpandTrigger="<tab>"				" Ultisnips config
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsSnippetDir="$HOME/.ultisnips"
