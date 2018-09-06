@@ -23,6 +23,7 @@ set shiftwidth=2
 
 " Misc config
 set relativenumber
+set number
 set encoding=utf-8
 filetype plugin on
 
