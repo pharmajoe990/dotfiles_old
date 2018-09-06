@@ -52,3 +52,5 @@ let g:UltiSnipsExpandTrigger="<tab>"				" Ultisnips config
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " let g:UltiSnipsSnippetDir="$HOME/.ultisnips"
+
+let g:ruby_host_prog = '$HOME/.rbenv/versions/2.5.1/bin/neovim-ruby-host'	" Path to Ruby, to avoid rbenv shimming in
