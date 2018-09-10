@@ -9,7 +9,8 @@ dotFileLocations = {
   'gitconfig' => '.gitconfig',
   'nvimrc' => '.nvimrc',	# Need to source this in ~/.config/nvim/init.vim
   'zshenv' =>  '.zshenv',
-  'zshrc' => '.zshrc'
+  'zshrc' => '.zshrc',
+  'tmux.conf' => '.tmux.conf'
 }
 
 homeDir = File.expand_path('~') + File::SEPARATOR
