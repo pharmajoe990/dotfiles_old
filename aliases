@@ -15,9 +15,5 @@ alias be='docker-compose up backend_au'
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias vim="nvim"
 
-# Specific to work laptop
-if [ `hostname` == "C02V12Q4HTD8" ]
-  then
-    alias adfs='myob-auth login --username=tim.roper@myob.com --sync --artifactory-user=titan_ci'
-    alias adfs-kube-preprod='myob-auth k -e jupiter-preprod'
-fi
+alias adfs='myob-auth login --username=tim.roper@myob.com --sync --artifactory-user=titan_ci'
+alias adfs-kube-preprod='myob-auth k -e jupiter-preprod'

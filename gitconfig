@@ -20,7 +20,10 @@ email = tim.roper@myob.com
 [mergetool "bc3"]
 	trustExitCode = true
 [alias]
+	st = status
 	l = log --graph --oneline --abbrev-commit --decorate --all
+	ap = add -p
+	co = commit
 	
 [filter "lfs"]
 	required = true

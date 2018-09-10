@@ -9,7 +9,8 @@ Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'ngmy/vim-rubocop'
 Plug 'chriskempson/base16-vim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
+Plug 'vim-syntastic/syntastic'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
@@ -53,5 +54,7 @@ let g:UltiSnipsExpandTrigger="<tab>"				" Ultisnips config
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " let g:UltiSnipsSnippetDir="$HOME/.ultisnips"
+"
+let g:deoplete#enable_at_startup = 1
 
 let g:ruby_host_prog = '$HOME/.rbenv/versions/2.5.1/bin/neovim-ruby-host'	" Path to Ruby, to avoid rbenv shimming in
