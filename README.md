@@ -7,5 +7,6 @@
 |zsh		|zshenv			|~/.zshenv		||
 |N/A		|aliases		|~/.aliases		||
 |git		|gitconfig		|~/.gitconfig		||
+|TMUX		|tmux			|~/.tmux		||
 
 run the script `link_files.rb`
