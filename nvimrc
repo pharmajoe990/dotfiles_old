@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'chr4/nginx.vim'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()							" Initialize plugin system
 
 " Formatting
