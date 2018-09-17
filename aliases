@@ -17,3 +17,4 @@ alias vim="nvim"
 
 alias adfs='myob-auth login --username=tim.roper@myob.com --sync --artifactory-user=titan_ci'
 alias adfs-kube-preprod='myob-auth k -e jupiter-preprod'
+alias clean-docker='docker rm $(docker ps -a -q) && docker rm $(docker ps -a -q)'
