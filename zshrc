@@ -3,7 +3,7 @@
 
 export ZSH=/Users/tim.roper/.oh-my-zsh				# Path to your oh-my-zsh installation.
 powerline-daemon -q						# Startup Powerline daemon
-ZSH_THEME="bureau"						# Set the theme
+ZSH_THEME="flazz"						# Set the theme
 plugins=(git ruby docker docker-compose zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 . $HOME/.aliases						# Setup aliases from file

@@ -17,6 +17,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'chr4/nginx.vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'jremmen/vim-ripgrep'
 call plug#end()							" Initialize plugin system
 
 " Formatting
