@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export ZSH=/Users/tim.roper/.oh-my-zsh				# Path to your oh-my-zsh installation.
-powerline-daemon -q						# Startup Powerline daemon
+export ZSH=$HOME/.oh-my-zsh				# Path to your oh-my-zsh installation.
+# powerline-daemon -q						# Startup Powerline daemon
 ZSH_THEME="flazz"						# Set the theme
 plugins=(git ruby docker docker-compose zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
