@@ -29,6 +29,8 @@ set relativenumber
 set number
 set encoding=utf-8
 filetype plugin on
+set cursorline
+set colorcolumn=120
 
 " Colors/themes
 let base16colorspace=256  					" Access colors present in 256 colorspace
@@ -41,7 +43,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " **** KEY REMAPPINGS ****
-" inoremap jj <esc>
+inoremap jj <esc>
 map <C-n> :NERDTreeToggle<CR>
 let mapleader="\<space>"
 
