@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'wincent/command-t'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -30,7 +30,7 @@ set number
 set encoding=utf-8
 filetype plugin on
 set cursorline
-set colorcolumn=120
+" set colorcolumn=120
 
 " Colors/themes
 let base16colorspace=256  					" Access colors present in 256 colorspace
@@ -50,15 +50,14 @@ let mapleader="\<space>"
 " Plugin configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16'
-let g:CommandTWildIgnore='*/node_modules'			" Command-T Ignore from search
 let g:GitGutterEnable = 1					" Enable GitGutter
-
 let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"				" Ultisnips config
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " let g:UltiSnipsSnippetDir="$HOME/.ultisnips"
-"
 let g:deoplete#enable_at_startup = 1
+let g:ctrlp_extensions = ['line']
+let g:ctrlp_cmd = 'CtrlPLastMode'
 
 let g:ruby_host_prog = '$HOME/.rbenv/versions/2.5.1/bin/neovim-ruby-host'	" Path to Ruby, to avoid rbenv shimming in
