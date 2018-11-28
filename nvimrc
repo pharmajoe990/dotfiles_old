@@ -46,6 +46,18 @@ endif
 inoremap jj <esc>
 map <C-n> :NERDTreeToggle<CR>
 let mapleader="\<space>"
+nnoremap <leader>s :w<cr>
+inoremap <leader>s <C-c>:w<cr>
+nnoremap <leader>n :bn<cr>
+nnoremap <leader>p :bp<cr>
+nnoremap <leader>d :bd<cr>
+nnoremap <leader>t :tabnext<cr>
+nnoremap <C-j> 5j
+nnoremap <C-k> 5k
+nnoremap <C-down> <C-w><down>
+nnoremap <C-up> <C-w><up>
+nnoremap <C-left> <C-w><left>
+nnoremap <C-right> <C-w><right>
 
 " Plugin configuration
 let g:airline#extensions#tabline#enabled = 1
