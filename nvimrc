@@ -18,6 +18,7 @@ Plug 'honza/vim-snippets'
 Plug 'chr4/nginx.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'jremmen/vim-ripgrep'
+Plug 'mxw/vim-jsx'
 call plug#end()							" Initialize plugin system
 
 " Formatting
@@ -31,6 +32,10 @@ set encoding=utf-8
 filetype plugin on
 set cursorline
 " set colorcolumn=120
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 " Colors/themes
 let base16colorspace=256  					" Access colors present in 256 colorspace
@@ -46,12 +51,12 @@ endif
 inoremap jj <esc>
 map <C-n> :NERDTreeToggle<CR>
 let mapleader="\<space>"
-nnoremap <leader>s :w<cr>
-inoremap <leader>s <C-c>:w<cr>
-nnoremap <leader>n :bn<cr>
-nnoremap <leader>p :bp<cr>
-nnoremap <leader>d :bd<cr>
-nnoremap <leader>t :tabnext<cr>
+" nnoremap <leader>s :w<cr>
+" inoremap <leader>s <C-c>:w<cr>
+" nnoremap <leader>n :bn<cr>
+" nnoremap <leader>p :bp<cr>
+" nnoremap <leader>d :bd<cr>
+" nnoremap <leader>t :tabnext<cr>
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
 nnoremap <C-down> <C-w><down>
