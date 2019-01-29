@@ -18,7 +18,10 @@ Plug 'honza/vim-snippets'
 Plug 'chr4/nginx.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'jremmen/vim-ripgrep'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'neomake/neomake'
 Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 call plug#end()							" Initialize plugin system
 
 " Formatting
@@ -76,5 +79,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:deoplete#enable_at_startup = 1
 let g:ctrlp_extensions = ['line']
 let g:ctrlp_cmd = 'CtrlPLastMode'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
+" Neomake config
+call neomake#configure#automake('w')         " When writing a buffer (no delay).
+call neomake#configure#automake('nw', 750)   " When writing a buffer (no delay), and on normal mode changes (after 750ms).
+call neomake#configure#automake('rw', 1000)  " When reading a buffer (after 1s), and when writing (no delay).
+call neomake#configure#automake('nrwi', 500) " Full config: when writing or reading a buffer, and on changes in insert and normal mode (after 1s; no delay when writing).
+let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
 let g:ruby_host_prog = '$HOME/.rbenv/versions/2.5.1/bin/neovim-ruby-host'	" Path to Ruby, to avoid rbenv shimming in
