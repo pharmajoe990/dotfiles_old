@@ -1,5 +1,5 @@
 # SSH connections
-alias ssh_upsource_dev="ssh -i $HOME/.ssh/coa-dev.pem ubuntu@ec2-13-54-217-99.ap-southeast-2.compute.amazonaws.com"
+# alias ssh_upsource_dev="ssh -i $HOME/.ssh/coa-dev.pem ubuntu@ec2-13-54-217-99.ap-southeast-2.compute.amazonaws.com"
 
 # Random aliases
 alias l='ls -l'
@@ -9,12 +9,12 @@ alias ....='cd ../../..'
 alias vimrc="vim $HOME/.nvimrc"
 
 # Development stuff
-alias be='docker-compose up backend_au'
+# alias be='docker-compose up backend_au'
 
 # Applications and programs
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+# alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias vim="nvim"
 
 alias adfs='myob-auth login --username=tim.roper@myob.com --sync --artifactory-user=titan_ci'
 alias adfs-kube-preprod='myob-auth k -e jupiter-preprod'
-alias clean-docker='docker rm $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+# alias clean-docker='docker rm $(docker ps -a -q) && docker rm $(docker ps -a -q)'
