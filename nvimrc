@@ -42,7 +42,12 @@ set foldlevel=2
 " Colors/themes
 syntax enable
 set background=dark
-set termguicolors
+" Enable true color
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
@@ -50,7 +55,7 @@ endif
 
 " **** KEY REMAPPINGS ****
 inoremap jj <esc>
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 let mapleader="\<space>"
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
@@ -61,7 +66,8 @@ nnoremap <C-right> <C-w><right>
 
 " Plugin configuration
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme = 'base16'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16'
 let g:GitGutterEnable = 1					" Enable GitGutter
 let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"				" Ultisnips config
@@ -71,6 +77,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:deoplete#enable_at_startup = 1
 let g:ctrlp_extensions = ['line']
 let g:ctrlp_cmd = 'CtrlPLastMode'
+let g:ctrlp_custom_ignore = '.git\|node_modules'
+let g:ctrlp_show_hidden = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
