@@ -66,7 +66,7 @@ nnoremap <C-right> <C-w><right>
 
 " Plugin configuration
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme = 'base16'
 let g:GitGutterEnable = 1					" Enable GitGutter
 let g:UltiSnipsUsePythonVersion = 3

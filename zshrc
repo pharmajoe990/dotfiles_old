@@ -28,3 +28,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/"			# Base16 Shell
 export PATH="/usr/local/opt/curl/bin:$PATH"			# Use Homebrew version of CURL
 export EDITOR="nvim"
 
+# Additional SSH Identities
+ssh-add "${HOME}/.ssh/id_rsa_work_macbook"
