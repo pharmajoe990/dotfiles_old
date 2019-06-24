@@ -29,4 +29,11 @@ export PATH="/usr/local/opt/curl/bin:$PATH"			# Use Homebrew version of CURL
 export EDITOR="nvim"
 
 # Additional SSH Identities
-ssh-add "${HOME}/.ssh/id_rsa_work_macbook"
+# ssh-add -q "${HOME}/.ssh/id_rsa_work_macbook"
+# ssh-add -q "${HOME}/.ssh/id_rsa"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tim.roper/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tim.roper/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tim.roper/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tim.roper/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

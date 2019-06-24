@@ -5,7 +5,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'ngmy/vim-rubocop'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-syntastic/syntastic'
@@ -21,6 +21,7 @@ Plug 'neomake/neomake'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fireplace'
+Plug 'leafgarland/typescript-vim'
 call plug#end()							" Initialize plugin system
 
 " Formatting
@@ -55,18 +56,19 @@ endif
 
 " **** KEY REMAPPINGS ****
 inoremap jj <esc>
-" map <C-n> :NERDTreeToggle<CR>
-let mapleader="\<space>"
+map <C-n> :NERDTreeToggle<CR>
+let mapleader=" "
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
-nnoremap <C-down> <C-w><down>
-nnoremap <C-up> <C-w><up>
-nnoremap <C-left> <C-w><left>
-nnoremap <C-right> <C-w><right>
+nnoremap <Leader>j <C-w><down> 
+nnoremap <Leader>k <C-w><up>
+nnoremap <Leader>h <C-w><left>
+nnoremap <Leader>l <C-w><right>
+nnoremap <Leader>d :bd<cr>
 
 " Plugin configuration
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 0 
 let g:airline_theme = 'base16'
 let g:GitGutterEnable = 1					" Enable GitGutter
 let g:UltiSnipsUsePythonVersion = 3

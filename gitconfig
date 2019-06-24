@@ -15,9 +15,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
 [difftool]
 	prompt = 0
+[difftool "nvimdiff"]	
+        cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [merge]
 	tool = vimdiff
 [mergetool]
