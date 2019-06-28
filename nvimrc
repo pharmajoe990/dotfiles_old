@@ -22,6 +22,7 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fireplace'
 Plug 'leafgarland/typescript-vim'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()							" Initialize plugin system
 
 " Formatting
@@ -50,9 +51,12 @@ if exists('+termguicolors')
   set termguicolors
 endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-if filereadable(expand("~/.vimrc_background"))
-  source ~/.vimrc_background
-endif
+" Disable this so we can have different VIM theme to terminal
+" if filereadable(expand("~/.vimrc_background"))
+"   source ~/.vimrc_background
+" endif
+let ayucolor="mirage"
+colorscheme ayu
 
 " **** KEY REMAPPINGS ****
 inoremap jj <esc>
@@ -65,6 +69,7 @@ nnoremap <Leader>k <C-w><up>
 nnoremap <Leader>h <C-w><left>
 nnoremap <Leader>l <C-w><right>
 nnoremap <Leader>d :bd<cr>
+nnoremap <Leader>w :w<cr>
 
 " Plugin configuration
 let g:airline#extensions#tabline#enabled = 1
