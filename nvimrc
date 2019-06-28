@@ -23,6 +23,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fireplace'
 Plug 'leafgarland/typescript-vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mhinz/vim-grepper'
 call plug#end()							" Initialize plugin system
 
 " Formatting
