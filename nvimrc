@@ -27,6 +27,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-grepper'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()							" Initialize plugin system
 
 " Formatting
@@ -39,7 +40,7 @@ set number
 set encoding=utf-8
 filetype plugin on
 set cursorline
-" set colorcolumn=120
+set colorcolumn=100
 set foldmethod=indent   
 set foldnestmax=10
 set nofoldenable
@@ -47,7 +48,6 @@ set foldlevel=2
 
 " Colors/themes
 syntax enable
-set background=dark
 " Enable true color
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -59,8 +59,9 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " if filereadable(expand("~/.vimrc_background"))
 "   source ~/.vimrc_background
 " endif
-let ayucolor="mirage"
-colorscheme ayu
+" let ayucolor="mirage"
+colorscheme PaperColor
+set background=dark
 
 " **** KEY REMAPPINGS ****
 inoremap jj <esc>
