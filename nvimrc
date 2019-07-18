@@ -22,13 +22,21 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fireplace'
 Plug 'leafgarland/typescript-vim'
-Plug 'ayu-theme/ayu-vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-grepper'
 Plug 'NLKNguyen/papercolor-theme'
-call plug#end()							" Initialize plugin system
+Plug 'jceb/vim-orgmode'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'fugalh/desert.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
+Plug 'janko/vim-test'
+Plug 'jgdavey/tslime.vim'
+call plug#end()
 
 " Formatting
 set shiftwidth=2
@@ -59,9 +67,9 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " if filereadable(expand("~/.vimrc_background"))
 "   source ~/.vimrc_background
 " endif
-" let ayucolor="mirage"
-colorscheme PaperColor
+colorscheme gruvbox
 set background=dark
+highlight Comment cterm=italic gui=italic
 
 " **** KEY REMAPPINGS ****
 inoremap jj <esc>
@@ -75,14 +83,22 @@ nnoremap <Leader>h <C-w><left>
 nnoremap <Leader>l <C-w><right>
 nnoremap <Leader>d :bd<cr>
 nnoremap <Leader>w :w<cr>
+" vim-test
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+" tslime
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
 
 " Plugin configuration
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0 
-let g:airline_theme = 'base16'
-let g:GitGutterEnable = 1					" Enable GitGutter
+let g:GitGutterEnable = 1
 let g:UltiSnipsUsePythonVersion = 3
-let g:UltiSnipsExpandTrigger="<tab>"				" Ultisnips config
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " let g:UltiSnipsSnippetDir="$HOME/.ultisnips"
@@ -94,12 +110,18 @@ let g:ctrlp_show_hidden = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+let g:NERDTreeWinSize = 50
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:gruvbox_contrast_dark = 'hard'
+" vim-test
+let test#strategy = 'neovim'
+" tslime
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
 
 " Neomake config
 call neomake#configure#automake('w')         " When writing a buffer (no delay).
@@ -109,3 +131,19 @@ call neomake#configure#automake('nrwi', 500) " Full config: when writing or read
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
 let g:ruby_host_prog = '$HOME/.rbenv/versions/2.5.1/bin/neovim-ruby-host'	" Path to Ruby, to avoid rbenv shimming in
+
+" Language Server Client
+" Required for operations modifying multiple buffers like rename.
+" set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['node', '/Users/tim.roper/code/javascript-typescript-langserver/lib/language-server-stdio'],
+    \ 'javascript.jsx': ['node', '/Users/tim.roper/code/javascript-typescript-langserver/lib/language-server-stdio'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> T :call LanguageClient_textDocument_typeDefinition()<CR>
