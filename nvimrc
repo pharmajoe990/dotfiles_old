@@ -18,24 +18,18 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'jremmen/vim-ripgrep'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'neomake/neomake'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fireplace'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-grepper'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'jceb/vim-orgmode'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'fugalh/desert.vim'
-Plug 'lifepillar/vim-solarized8'
-Plug 'morhetz/gruvbox'
 Plug 'janko/vim-test'
 Plug 'jgdavey/tslime.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
 " Formatting
@@ -67,9 +61,9 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " if filereadable(expand("~/.vimrc_background"))
 "   source ~/.vimrc_background
 " endif
-colorscheme gruvbox
+colorscheme srcery
 set background=dark
-highlight Comment cterm=italic gui=italic
+
 
 " **** KEY REMAPPINGS ****
 inoremap jj <esc>
@@ -101,7 +95,7 @@ let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" let g:UltiSnipsSnippetDir="$HOME/.ultisnips"
+let g:UltiSnipsSnippetDir="$HOME/.ultisnips"
 let g:deoplete#enable_at_startup = 1
 let g:ctrlp_extensions = ['line']
 let g:ctrlp_cmd = 'CtrlPLastMode'
@@ -112,38 +106,24 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:NERDTreeWinSize = 50
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-let g:gruvbox_contrast_dark = 'hard'
 " vim-test
 let test#strategy = 'neovim'
 " tslime
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+" gitgutter
+set updatetime=100
 
 " Neomake config
 call neomake#configure#automake('w')         " When writing a buffer (no delay).
-call neomake#configure#automake('nw', 750)   " When writing a buffer (no delay), and on normal mode changes (after 750ms).
-call neomake#configure#automake('rw', 1000)  " When reading a buffer (after 1s), and when writing (no delay).
-call neomake#configure#automake('nrwi', 500) " Full config: when writing or reading a buffer, and on changes in insert and normal mode (after 1s; no delay when writing).
+call neomake#configure#automake('nw', 100)   " When writing a buffer (no delay), and on normal mode changes (after 750ms).
+call neomake#configure#automake('rw', 100)  " When reading a buffer (after 1s), and when writing (no delay).
+call neomake#configure#automake('nrwi', 100) " Full config: when writing or reading a buffer, and on changes in insert and normal mode (after 1s; no delay when writing).
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
 let g:ruby_host_prog = '$HOME/.rbenv/versions/2.5.1/bin/neovim-ruby-host'	" Path to Ruby, to avoid rbenv shimming in
 
-" Language Server Client
-" Required for operations modifying multiple buffers like rename.
-" set hidden
-
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['node', '/Users/tim.roper/code/javascript-typescript-langserver/lib/language-server-stdio'],
-    \ 'javascript.jsx': ['node', '/Users/tim.roper/code/javascript-typescript-langserver/lib/language-server-stdio'],
-    \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> T :call LanguageClient_textDocument_typeDefinition()<CR>
