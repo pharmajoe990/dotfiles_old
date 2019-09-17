@@ -18,10 +18,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'jremmen/vim-ripgrep'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'neomake/neomake'
-" Plug 'mxw/vim-jsx'
-" Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fireplace'
-" Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-grepper'
@@ -61,7 +58,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " if filereadable(expand("~/.vimrc_background"))
 "   source ~/.vimrc_background
 " endif
-colorscheme srcery
+colorscheme PaperColor
 set background=dark
 
 

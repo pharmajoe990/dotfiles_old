@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.jenv/bin:$PATH"				# JENV JDK environment manager
 eval "$(jenv init -)"
 
-eval "$(rbenv init -)"						# Load rbenv automatically
+# eval "$(rbenv init -)"						# Load rbenv automatically
 
 # . $(brew --prefix nvm)/nvm.sh					# Node Version Manager
 # Try Nodebrew instead to see if it reduces init time
