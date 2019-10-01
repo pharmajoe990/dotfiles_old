@@ -122,5 +122,5 @@ call neomake#configure#automake('rw', 100)  " When reading a buffer (after 1s), 
 call neomake#configure#automake('nrwi', 100) " Full config: when writing or reading a buffer, and on changes in insert and normal mode (after 1s; no delay when writing).
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
-let g:ruby_host_prog = '$HOME/.rbenv/versions/2.5.1/bin/neovim-ruby-host'	" Path to Ruby, to avoid rbenv shimming in
+" let g:ruby_host_prog = '$HOME/.rbenv/versions/2.5.1/bin/neovim-ruby-host'	" Path to Ruby, to avoid rbenv shimming in
 
